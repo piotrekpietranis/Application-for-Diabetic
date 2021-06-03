@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+
+        android:id="@+id/edit_w"
+        android:layout_width="46dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_for_macro_txtview"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/edit_b"
+        app:layout_constraintTop_toBottomOf="@+id/w_txt" />
+
+    <EditText
+
+        android:id="@+id/edit_kcal"
+        android:layout_width="46dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_for_macro_txtview"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/edit_t"
+        app:layout_constraintTop_toBottomOf="@+id/kcal_txt" />
+
+    <EditText
+
+        android:id="@+id/edit_t"
+        android:layout_width="46dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_for_macro_txtview"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/edit_w"
+        app:layout_constraintTop_toBottomOf="@+id/t_txt" />
+
+    <ImageView
+        android:id="@+id/b_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/red_rose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/b_letter"/>
+
+    <ImageView
+        android:id="@+id/w_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/b_txt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/w_letter" />
+
+    <ImageView
+        android:id="@+id/t_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/w_txt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/t_letter" />
+
+    <ImageView
+        android:id="@+id/kcal_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/t_txt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kcal_txt" />
+
+    <EditText
+
+        android:id="@+id/edit_b"
+        android:layout_width="46dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_for_macro_txtview"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_txt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
