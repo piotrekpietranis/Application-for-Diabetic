@@ -43,3 +43,14 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
+
+android {
+    defaultConfig {
+        // Stops the Gradle plugin’s automatic rasterization of vectors
+        generatedDensities = []
+    }
+    // Flag notifies aapt to keep the attribute IDs around
+    aaptOptions {
+        additionalParameters "--no-version-vectors"
+    }
+}
