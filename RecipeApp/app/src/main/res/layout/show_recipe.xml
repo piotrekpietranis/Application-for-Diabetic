@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#A4F3A2"
+    android:orientation="vertical"
+    tools:context=".Show_your_recipe">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="351dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@mipmap/nalesniczki"></ImageView>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:gravity="center"
+        android:text="Nazwa z bazy" />
+
+    <include
+        layout="@layout/b_w_t_for_showing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:divider="@drawable/empty_divider"
+            android:showDividers="middle" />
+
+    <ImageView
+        android:id="@+id/easy"
+        android:layout_width="157dp"
+        android:layout_height="46dp"
+        app:srcCompat="@drawable/easy"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:divider="@drawable/empty_divider"
+        android:showDividers="middle" />
+
+    <ImageButton
+        android:id="@+id/show_recipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        app:srcCompat="@drawable/button_show_recipe"
+        android:backgroundTint="#A4F3A2"
+
+        />
+
+
+
+</LinearLayout>
