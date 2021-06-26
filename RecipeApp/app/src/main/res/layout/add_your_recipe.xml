@@ -59,6 +59,7 @@
 
             <EditText
 
+                android:id="@+id/name"
                 android:layout_width="333dp"
                 android:layout_height="33dp"
                 android:background="@drawable/nazwa_text_edit"
@@ -132,7 +133,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+<!--            <Button-->
+<!--                android:id="@+id/addRecipe"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Add Recipe" />-->
 
+            <Button
+                android:id="@+id/getAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/getall" />
+
+<!--            <Button-->
+<!--                android:id="@+id/getSniadanie"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="getSniadanie" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/getObiad"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="getObiad" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/getKolacja"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="getKolacja" />-->
 
 
         </LinearLayout>
