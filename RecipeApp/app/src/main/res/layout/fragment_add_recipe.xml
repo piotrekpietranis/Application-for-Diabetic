@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A4F3A2"
-    tools:context=".Add_your_recipe">
+    tools:context=".ui.AddRecipeFragment">
 
     <include
         layout="@layout/toolbar_layout"

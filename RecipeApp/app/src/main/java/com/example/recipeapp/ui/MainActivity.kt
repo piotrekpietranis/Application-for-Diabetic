@@ -1,13 +1,12 @@
-package com.example.recipeapp
+package com.example.recipeapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.widget.Toolbar
+import com.example.recipeapp.R
 
-class Add_your_recipe : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.add_your_recipe)
-
+        setContentView(R.layout.activity_main)
     }
 }

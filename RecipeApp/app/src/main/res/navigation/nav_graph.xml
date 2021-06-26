@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.recipeapp.ui.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_mealListFragment"
+            app:destination="@id/mealListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealListFragment"
+        android:name="com.example.recipeapp.ui.MealListFragment"
+        android:label="fragment_meal_list"
+        tools:layout="@layout/fragment_meal_list" >
+        <action
+            android:id="@+id/action_mealListFragment_to_addRecipeFragment"
+            app:destination="@id/addRecipeFragment" />
+        <action
+            android:id="@+id/action_mealListFragment_to_showRecipeFragment"
+            app:destination="@id/showRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRecipeFragment"
+        android:name="com.example.recipeapp.ui.AddRecipeFragment"
+        android:label="fragment_add_recipe"
+        tools:layout="@layout/fragment_add_recipe" />
+    <fragment
+        android:id="@+id/showRecipeFragment"
+        android:name="com.example.recipeapp.ui.ShowRecipeFragment"
+        android:label="fragment_show_recipe"
+        tools:layout="@layout/fragment_show_recipe" />
+</navigation>
