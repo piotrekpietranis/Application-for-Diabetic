@@ -9,11 +9,12 @@
 
 
     <TextView
+        android:id="@+id/text_view_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/background_for_name"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/text_view_preparation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +25,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/linearLayout"
+        android:id="@+id/text_view_preparation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/background_for_showing_recipe"

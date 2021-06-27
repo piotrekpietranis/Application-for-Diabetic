@@ -39,10 +39,17 @@
         <action
             android:id="@+id/action_showRecipeFragment_to_recipeDetailsFragment"
             app:destination="@id/recipeDetailsFragment" />
+        <argument
+            android:name="Recipe"
+            app:argType="com.example.recipeapp.data.Recipes" />
     </fragment>
     <fragment
         android:id="@+id/recipeDetailsFragment"
         android:name="com.example.recipeapp.ui.RecipeDetailsFragment"
         android:label="fragment_show_recipe_details"
-        tools:layout="@layout/fragment_show_recipe_details" />
+        tools:layout="@layout/fragment_show_recipe_details" >
+        <argument
+            android:name="Recipe"
+            app:argType="com.example.recipeapp.data.Recipes" />
+    </fragment>
 </navigation>

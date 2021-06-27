@@ -1,6 +1,7 @@
 package com.example.recipeapp.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,15 +17,26 @@ import com.example.recipeapp.data.Recipes
 
 
 class MealListFragment : Fragment() {
+
+    companion object {
+        private const val TAG = "MealListFragment"
+    }
+
+    lateinit var mRecipeasModel:RecipeasViewModel
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_meal_list, container, false)
-        var mRecipeasModel:RecipeasViewModel
 
         mRecipeasModel = ViewModelProvider(this).get(RecipeasViewModel::class.java)
+
+
+        Log.i(TAG, "onCreateView: " + mRecipeasModel.getDummyData()[0].name)
+
 
 //        val getAll = view.findViewById<Button>(R.id.getAll)
 //        getAll.setOnClickListener{
@@ -64,19 +76,19 @@ class MealListFragment : Fragment() {
 
         breakfastButton.setOnClickListener {
             val action =
-                MealListFragmentDirections.actionMealListFragmentToShowRecipeFragment()
+                MealListFragmentDirections.actionMealListFragmentToShowRecipeFragment(mRecipeasModel.getDummyData()[0])
             view.findNavController().navigate(action)
         }
 
         lunchButton.setOnClickListener {
             val action =
-                MealListFragmentDirections.actionMealListFragmentToShowRecipeFragment()
+                MealListFragmentDirections.actionMealListFragmentToShowRecipeFragment(mRecipeasModel.getDummyData()[1])
             view.findNavController().navigate(action)
         }
 
         dinnerButton.setOnClickListener {
             val action =
-                MealListFragmentDirections.actionMealListFragmentToShowRecipeFragment()
+                MealListFragmentDirections.actionMealListFragmentToShowRecipeFragment(mRecipeasModel.getDummyData()[2])
             view.findNavController().navigate(action)
         }
 
