@@ -5,8 +5,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.ArrayAdapter
 import android.widget.ImageButton
+import android.widget.ListView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -16,13 +17,14 @@ import com.example.recipeapp.data.RecipeasViewModel
 import com.example.recipeapp.data.Recipes
 
 
-class MealListFragment : Fragment() {
+class MealListFragment : Fragment(), MealAdapter.RecipeClickedListener {
 
     companion object {
         private const val TAG = "MealListFragment"
     }
 
     lateinit var mRecipeasModel:RecipeasViewModel
+    lateinit var rootView : View
 
 
     override fun onCreateView(
@@ -30,7 +32,7 @@ class MealListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.fragment_meal_list, container, false)
+        rootView = inflater.inflate(R.layout.fragment_meal_list, container, false)
 
         mRecipeasModel = ViewModelProvider(this).get(RecipeasViewModel::class.java)
 
@@ -69,39 +71,22 @@ class MealListFragment : Fragment() {
 
 
 
-        val breakfastButton = view.findViewById<ImageButton>(R.id.sniadanie_button)
-        val lunchButton = view.findViewById<ImageButton>(R.id.obiad_button)
-        val dinnerButton = view.findViewById<ImageButton>(R.id.kolacja_button)
-        val plusButton = view.findViewById<ImageButton>(R.id.plus_button)
+        val plusButton = rootView!!.findViewById<ImageButton>(R.id.plus_button)
 
-        breakfastButton.setOnClickListener {
-            val action =
-                MealListFragmentDirections.actionMealListFragmentToShowRecipeFragment(mRecipeasModel.getDummyData()[0])
-            view.findNavController().navigate(action)
-        }
-
-        lunchButton.setOnClickListener {
-            val action =
-                MealListFragmentDirections.actionMealListFragmentToShowRecipeFragment(mRecipeasModel.getDummyData()[1])
-            view.findNavController().navigate(action)
-        }
-
-        dinnerButton.setOnClickListener {
-            val action =
-                MealListFragmentDirections.actionMealListFragmentToShowRecipeFragment(mRecipeasModel.getDummyData()[2])
-            view.findNavController().navigate(action)
-        }
 
         plusButton.setOnClickListener {
             val action =
                 MealListFragmentDirections.actionMealListFragmentToAddRecipeFragment()
-            view.findNavController().navigate(action)
+            rootView!!.findNavController().navigate(action)
         }
 
+        var listView = rootView?.findViewById<ListView>(R.id.list_view)
+        listView.adapter = MealAdapter(
+            requireContext(),
+            mRecipeasModel.getDummyData(),
+            this)
 
-
-
-        return view
+        return rootView
     }
 
      fun insertDataToDatabase() {
@@ -172,6 +157,14 @@ class MealListFragment : Fragment() {
 //        mRecipeasModel = ViewModelProvider(this).get(RecipeasViewModel::class.java)
 //        mRecipeasModel.readAllData.observe(this, obs)
 //        mRecipeasModel.readAllData.removeObserver(obs)
+
+    }
+
+    override fun onRecipeClicked(recipe: Recipes) {
+
+        val action = MealListFragmentDirections.actionMealListFragmentToShowRecipeFragment(recipe)
+        rootView?.findNavController().navigate(action)
+
 
     }
 }

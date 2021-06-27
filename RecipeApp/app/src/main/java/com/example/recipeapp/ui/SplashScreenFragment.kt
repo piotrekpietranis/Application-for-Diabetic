@@ -25,7 +25,7 @@ class SplashScreenFragment : Fragment() {
                 SplashScreenFragmentDirections.actionSplashScreenFragmentToMealListFragment()
             view.findNavController().navigate(action)
 
-        }, 3000)
+        }, 2000)
 
         return view
     }
