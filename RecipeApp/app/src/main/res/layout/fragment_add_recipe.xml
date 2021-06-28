@@ -64,7 +64,23 @@
 <!--        android:showDividers="middle" />-->
 
 
-    <TextView
+            <TextView
+                android:id="@+id/nazwa3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/red_rose"
+                android:text="Kategoria"
+                android:textColor="#000000"
+                android:textSize="25sp" />
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner"
+                android:spinnerMode="dropdown" />
+
+            <TextView
         android:id="@+id/przygotowanie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,15 +89,16 @@
         android:textSize="25sp"
         android:textColor="#000000" />
 
-    <EditText
+            <EditText
 
-        android:layout_width="333dp"
-        android:layout_height="100dp"
-        android:background="@drawable/przygotowanie_background"
-        android:gravity="top|left"
-        android:maxLines="15"
-        android:minLines="5"
-        android:textSize="20sp" />
+                android:id="@+id/preparation"
+                android:layout_width="333dp"
+                android:layout_height="100dp"
+                android:background="@drawable/przygotowanie_background"
+                android:gravity="top|left"
+                android:maxLines="15"
+                android:minLines="5"
+                android:textSize="20sp" />
 
     <LinearLayout
         android:layout_height="7dp"
@@ -120,22 +137,22 @@
         android:textSize="25sp"
         android:textColor="#000000" />
 
-    <include
-        layout="@layout/layout_b_w_t_kcal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-<!--            <Button-->
+            <!--            <Button-->
 <!--                android:id="@+id/addRecipe"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:text="Add Recipe" />-->
 
+            <include
+                layout="@layout/layout_b_w_t_kcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
             <Button
-                android:id="@+id/getAll"
+                android:id="@+id/addRecipe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/getall" />
+                android:text="Add recipe" />
 
 <!--            <Button-->
 <!--                android:id="@+id/getSniadanie"-->

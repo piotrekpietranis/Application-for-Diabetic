@@ -68,19 +68,60 @@ class MealListFragment : Fragment(), MealAdapter.RecipeClickedListener {
 
 
 
-        val plusButton = rootView!!.findViewById<ImageButton>(R.id.plus_button)
+//        val plusButton = rootView!!.findViewById<ImageButton>(R.id.plus_button)
 
         var list = arrayListOf<Recipes>()
 
-        if (args.category == "sniadanie") list = mRecipeasModel.getDummyDataBreakfast()
-        if (args.category == "obiad") list = mRecipeasModel.getDummyDataLunch()
-        if (args.category == "kolacja") list = mRecipeasModel.getDummyDataDinner()
-
-        plusButton.setOnClickListener {
-            val action =
-                MealListFragmentDirections.actionMealListFragmentToAddRecipeFragment()
-            rootView!!.findNavController().navigate(action)
+        if (args.category == "sniadanie") {
+            list = mRecipeasModel.getDummyDataBreakfast()
+                    mRecipeasModel = ViewModelProvider(this).get(RecipeasViewModel::class.java)
+        mRecipeasModel.getAllbreakfast.observe(viewLifecycleOwner, Observer { recipes->
+            var iterator = recipes.iterator()
+            iterator.forEach {
+                print(it.id)
+                print(" ")
+                print(it.name)
+                print(" ")
+                println(it.category)
+                list.add(it)
+            }
+        })
         }
+        if (args.category == "obiad") {
+            list = mRecipeasModel.getDummyDataLunch()
+            mRecipeasModel = ViewModelProvider(this).get(RecipeasViewModel::class.java)
+            mRecipeasModel.getAllLunch.observe(viewLifecycleOwner, Observer { recipes->
+                var iterator = recipes.iterator()
+                iterator.forEach {
+                    print(it.id)
+                    print(" ")
+                    print(it.name)
+                    print(" ")
+                    println(it.category)
+                    list.add(it)
+                }
+            })
+        }
+        if (args.category == "kolacja") {list = mRecipeasModel.getDummyDataDinner()
+            mRecipeasModel = ViewModelProvider(this).get(RecipeasViewModel::class.java)
+            mRecipeasModel.getAlldinner.observe(viewLifecycleOwner, Observer { recipes->
+                var iterator = recipes.iterator()
+                iterator.forEach {
+                    print(it.id)
+                    print(" ")
+                    print(it.name)
+                    print(" ")
+                    println(it.category)
+                    list.add(it)
+                }
+            })
+        }
+
+//        plusButton.setOnClickListener {
+//            val action =
+//                MealListFragmentDirections.actionMealListFragmentToAddRecipeFragment()
+//            rootView!!.findNavController().navigate(action)
+//        }
 
         var listView = rootView?.findViewById<ListView>(R.id.list_view)
         listView.adapter = MealAdapter(
