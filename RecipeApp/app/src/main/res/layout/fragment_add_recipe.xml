@@ -8,10 +8,6 @@
     android:background="#A4F3A2"
     tools:context=".ui.AddRecipeFragment">
 
-    <include
-        layout="@layout/toolbar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -36,10 +32,6 @@
                 android:textSize="25sp"
                 android:textColor="#000000"
                  />
-
-
-
-
 
     <!-- Here is the inserted layout -->
     <include

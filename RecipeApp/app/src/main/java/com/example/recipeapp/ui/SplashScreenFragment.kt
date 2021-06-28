@@ -22,7 +22,7 @@ class SplashScreenFragment : Fragment() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             val action =
-                SplashScreenFragmentDirections.actionSplashScreenFragmentToMealListFragment()
+                SplashScreenFragmentDirections.actionSplashScreenFragmentToCategoryListFragment()
             view.findNavController().navigate(action)
 
         }, 2000)

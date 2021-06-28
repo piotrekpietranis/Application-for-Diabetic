@@ -28,12 +28,32 @@ class RecipeasViewModel(aplication:Application):AndroidViewModel(aplication) {
         }
     }
 
-    fun getDummyData() : ArrayList<Recipes> {
+    fun getDummyDataBreakfast() : ArrayList<Recipes> {
         var dummyRecipes = arrayListOf<Recipes>()
 
-        dummyRecipes.add(Recipes(1,"sniadanko", "opis przyrzadzenia sniadanka", "łatwe", "sniadanie", 100f,400f,300f,666f))
-        dummyRecipes.add(Recipes(1,"obiadek", "opis przyrzadzenia obiadku", "srednie", "obiad", 200f,500f,200f,200f))
-        dummyRecipes.add(Recipes(1,"kolacyjka", "opis przyrzadzenia kolacyjki", "trudne", "kolacje", 300f,400f,500f,100f))
+        dummyRecipes.add(Recipes(1,"Nalesniki", "opis przyrzadzenia nalesnikow", "łatwe", "sniadanie", 100f,400f,300f,666f))
+        dummyRecipes.add(Recipes(2,"Jajecznica", "opis przyrzadzenia jajecznicy", "srednie", "sniadanie", 200f,500f,200f,200f))
+        dummyRecipes.add(Recipes(3,"Gofry", "opis przyrzadzenia goferów", "trudne", "sniadanie", 300f,400f,500f,100f))
+
+        return dummyRecipes
+    }
+
+    fun getDummyDataLunch() : ArrayList<Recipes> {
+        var dummyRecipes = arrayListOf<Recipes>()
+
+        dummyRecipes.add(Recipes(1,"Łosoś", "opis przyrzadzenia lososia", "łatwe", "obiad", 100f,400f,300f,666f))
+        dummyRecipes.add(Recipes(2,"Schabowy", "opis przyrzadzenia schabowego", "srednie", "obiad", 200f,500f,200f,200f))
+        dummyRecipes.add(Recipes(3,"Chleb smarowany nożem", "opis przyrzadzenia chleba", "trudne", "obiad", 300f,400f,500f,100f))
+
+        return dummyRecipes
+    }
+
+    fun getDummyDataDinner() : ArrayList<Recipes> {
+        var dummyRecipes = arrayListOf<Recipes>()
+
+        dummyRecipes.add(Recipes(1,"Kiełba z gryla", "opis przyrzadzenia kiełby", "łatwe", "kolacje", 100f,400f,300f,666f))
+        dummyRecipes.add(Recipes(2,"Piwo i chipsy", "opis przyrzadzenia piwa i chipsów", "srednie", "kolacje", 200f,500f,200f,200f))
+        dummyRecipes.add(Recipes(3,"Pizza z wczoraj", "opis przyrzadzenia pizzy z wczoraj", "trudne", "kolacje", 300f,400f,500f,100f))
 
         return dummyRecipes
     }

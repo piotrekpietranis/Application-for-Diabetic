@@ -11,8 +11,8 @@
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
-            android:id="@+id/action_splashScreenFragment_to_mealListFragment"
-            app:destination="@id/mealListFragment" />
+            android:id="@+id/action_splashScreenFragment_to_categoryListFragment"
+            app:destination="@id/categoryListFragment" />
     </fragment>
     <fragment
         android:id="@+id/mealListFragment"
@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_mealListFragment_to_showRecipeFragment"
             app:destination="@id/showRecipeFragment" />
+        <argument
+            android:name="Category"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/addRecipeFragment"
@@ -51,5 +54,17 @@
         <argument
             android:name="Recipe"
             app:argType="com.example.recipeapp.data.Recipes" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.example.recipeapp.ui.CategoryListFragment"
+        android:label="fragment_category_list"
+        tools:layout="@layout/fragment_category_list" >
+        <action
+            android:id="@+id/action_categoryListFragment_to_mealListFragment"
+            app:destination="@id/mealListFragment" />
+        <action
+            android:id="@+id/action_categoryListFragment_to_addRecipeFragment"
+            app:destination="@id/addRecipeFragment" />
     </fragment>
 </navigation>

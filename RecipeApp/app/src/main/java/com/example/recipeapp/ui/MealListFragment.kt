@@ -5,13 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.ImageButton
 import android.widget.ListView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.recipeapp.R
 import com.example.recipeapp.data.RecipeasViewModel
 import com.example.recipeapp.data.Recipes
@@ -23,6 +23,8 @@ class MealListFragment : Fragment(), MealAdapter.RecipeClickedListener {
         private const val TAG = "MealListFragment"
     }
 
+    private val args by navArgs<MealListFragmentArgs>()
+
     lateinit var mRecipeasModel:RecipeasViewModel
     lateinit var rootView : View
 
@@ -33,12 +35,7 @@ class MealListFragment : Fragment(), MealAdapter.RecipeClickedListener {
     ): View? {
 
         rootView = inflater.inflate(R.layout.fragment_meal_list, container, false)
-
         mRecipeasModel = ViewModelProvider(this).get(RecipeasViewModel::class.java)
-
-
-        Log.i(TAG, "onCreateView: " + mRecipeasModel.getDummyData()[0].name)
-
 
 //        val getAll = view.findViewById<Button>(R.id.getAll)
 //        getAll.setOnClickListener{
@@ -73,6 +70,11 @@ class MealListFragment : Fragment(), MealAdapter.RecipeClickedListener {
 
         val plusButton = rootView!!.findViewById<ImageButton>(R.id.plus_button)
 
+        var list = arrayListOf<Recipes>()
+
+        if (args.category == "sniadanie") list = mRecipeasModel.getDummyDataBreakfast()
+        if (args.category == "obiad") list = mRecipeasModel.getDummyDataLunch()
+        if (args.category == "kolacja") list = mRecipeasModel.getDummyDataDinner()
 
         plusButton.setOnClickListener {
             val action =
@@ -83,7 +85,7 @@ class MealListFragment : Fragment(), MealAdapter.RecipeClickedListener {
         var listView = rootView?.findViewById<ListView>(R.id.list_view)
         listView.adapter = MealAdapter(
             requireContext(),
-            mRecipeasModel.getDummyData(),
+            list,
             this)
 
         return rootView
