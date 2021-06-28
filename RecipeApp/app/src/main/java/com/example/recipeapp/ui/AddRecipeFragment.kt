@@ -19,7 +19,7 @@ import com.example.recipeapp.data.Recipes
 class AddRecipeFragment : Fragment() {
 
     companion object {
-        val DIFFICULTY_LIST = arrayListOf("łatwy", "sredni", "trudny")
+        val DIFFICULTY_LIST = arrayListOf("Łatwy", "Średni", "Trudny")
         val CATEGORY_LIST = arrayListOf("Sniadanie", "Obiad", "Kolacja")
     }
     lateinit var mRecipeasModel:RecipeasViewModel
@@ -60,10 +60,15 @@ class AddRecipeFragment : Fragment() {
         val preparation = view?.findViewById<TextView>(R.id.preparation)
         val dificulty = view?.findViewById<Spinner>(R.id.spinner1)
 
+        val edit_b = view?.findViewById<TextView>(R.id.edit_b)
+        val edit_w = view?.findViewById<TextView>(R.id.edit_w)
+        val edit_t = view?.findViewById<TextView>(R.id.edit_t)
+        val edit_kcal = view?.findViewById<TextView>(R.id.edit_kcal)
+
 
 
         var recipes = Recipes(0, name?.text.toString(), preparation?.text.toString(),
-            dificulty?.selectedItem.toString(),category?.selectedItem.toString(), 3F,3F,3F,132F)
+            dificulty?.selectedItem.toString(),category?.selectedItem.toString(), edit_b?.text.toString().toFloat(),edit_w?.text.toString().toFloat(),edit_t?.text.toString().toFloat(),edit_kcal?.text.toString().toFloat())
         mRecipeasModel.addRecipeas(recipes)
          println("Recipe Added")
     }

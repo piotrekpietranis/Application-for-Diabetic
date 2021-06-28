@@ -33,11 +33,16 @@ class ShowRecipeFragment : Fragment() {
         var textViewT = view.findViewById<TextView>(R.id.edit_t)
         var textViewKcal = view.findViewById<TextView>(R.id.edit_kcal)
 
+        var dif = view.findViewById<TextView>(R.id.dif)
+
+//        var textViewKcal = view.findViewById<TextView>(R.id.dif)
+
         textViewName.setText(recipe.name)
         textViewB.setText(recipe.P.toString())
         textViewW.setText(recipe.C.toString())
         textViewT.setText(recipe.F.toString())
         textViewKcal.setText(recipe.kcal.toString())
+        dif.setText(recipe.difficulty);
 
         val buttonShowDetails = view.findViewById<ImageButton>(R.id.show_recipe)
         buttonShowDetails.setOnClickListener {
