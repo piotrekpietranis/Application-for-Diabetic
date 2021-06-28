@@ -31,9 +31,9 @@ class RecipeasViewModel(aplication:Application):AndroidViewModel(aplication) {
     fun getDummyDataBreakfast() : ArrayList<Recipes> {
         var dummyRecipes = arrayListOf<Recipes>()
 
-        dummyRecipes.add(Recipes(1,"Nalesniki", "opis przyrzadzenia nalesnikow", "łatwe", "sniadanie", 100f,400f,300f,666f))
-        dummyRecipes.add(Recipes(2,"Jajecznica", "opis przyrzadzenia jajecznicy", "srednie", "sniadanie", 200f,500f,200f,200f))
-        dummyRecipes.add(Recipes(3,"Gofry", "opis przyrzadzenia goferów", "trudne", "sniadanie", 300f,400f,500f,100f))
+        dummyRecipes.add(Recipes(1,"Sniadanie pierwsze", "opis przyrzadzenia sniadania 1", "łatwe", "sniadanie", 100f,400f,300f,666f))
+        dummyRecipes.add(Recipes(2,"Sniadanie drugie", "opis przyrzadzenia sniadania 2", "srednie", "sniadanie", 200f,500f,200f,200f))
+        dummyRecipes.add(Recipes(3,"Sniadanie trzecie", "opis przyrzadzenia sniadania 3", "trudne", "sniadanie", 300f,400f,500f,100f))
 
         return dummyRecipes
     }
@@ -41,9 +41,9 @@ class RecipeasViewModel(aplication:Application):AndroidViewModel(aplication) {
     fun getDummyDataLunch() : ArrayList<Recipes> {
         var dummyRecipes = arrayListOf<Recipes>()
 
-        dummyRecipes.add(Recipes(1,"Łosoś", "opis przyrzadzenia lososia", "łatwe", "obiad", 100f,400f,300f,666f))
-        dummyRecipes.add(Recipes(2,"Schabowy", "opis przyrzadzenia schabowego", "srednie", "obiad", 200f,500f,200f,200f))
-        dummyRecipes.add(Recipes(3,"Chleb smarowany nożem", "opis przyrzadzenia chleba", "trudne", "obiad", 300f,400f,500f,100f))
+        dummyRecipes.add(Recipes(1,"Obiad pierwszy", "opis przyrzadzenia obiadu 1", "łatwe", "obiad", 100f,400f,300f,666f))
+        dummyRecipes.add(Recipes(2,"Obiad drugi", "opis przyrzadzenia obiadu 2", "srednie", "obiad", 200f,500f,200f,200f))
+        dummyRecipes.add(Recipes(3,"Obiad trzeci", "opis przyrzadzenia obiadu 3", "trudne", "obiad", 300f,400f,500f,100f))
 
         return dummyRecipes
     }
@@ -51,9 +51,9 @@ class RecipeasViewModel(aplication:Application):AndroidViewModel(aplication) {
     fun getDummyDataDinner() : ArrayList<Recipes> {
         var dummyRecipes = arrayListOf<Recipes>()
 
-        dummyRecipes.add(Recipes(1,"Kiełba z gryla", "opis przyrzadzenia kiełby", "łatwe", "kolacje", 100f,400f,300f,666f))
-        dummyRecipes.add(Recipes(2,"Piwo i chipsy", "opis przyrzadzenia piwa i chipsów", "srednie", "kolacje", 200f,500f,200f,200f))
-        dummyRecipes.add(Recipes(3,"Pizza z wczoraj", "opis przyrzadzenia pizzy z wczoraj", "trudne", "kolacje", 300f,400f,500f,100f))
+        dummyRecipes.add(Recipes(1,"Kolacja pierwsza", "opis przyrzadzenia kolacji 1", "łatwe", "kolacje", 100f,400f,300f,666f))
+        dummyRecipes.add(Recipes(2,"Kolacja druga", "opis przyrzadzenia kolacji 2", "srednie", "kolacje", 200f,500f,200f,200f))
+        dummyRecipes.add(Recipes(3,"Kolacja trzecia", "opis przyrzadzenia kolacji 3", "trudne", "kolacje", 300f,400f,500f,100f))
 
         return dummyRecipes
     }
